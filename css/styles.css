@@ -4,6 +4,24 @@
   --text-secondary: #94a3b8;
   --color-accent-1: #3b82f6; /* Electric Blue */
   --color-accent-2: #8b5cf6; /* Purple */
+  
+  /* Subtle Categorical Color System */
+  --tag-prog-bg: rgba(234, 179, 8, 0.1); /* Soft Yellow */
+  --tag-prog-text: #fde047;
+  --tag-prog-border: rgba(234, 179, 8, 0.2);
+  
+  --tag-aiml-bg: rgba(168, 85, 247, 0.1); /* Soft Purple */
+  --tag-aiml-text: #d8b4fe;
+  --tag-aiml-border: rgba(168, 85, 247, 0.2);
+  
+  --tag-be-bg: rgba(34, 197, 94, 0.1); /* Soft Green */
+  --tag-be-text: #86efac;
+  --tag-be-border: rgba(34, 197, 94, 0.2);
+  
+  --tag-dom-bg: rgba(59, 130, 246, 0.1); /* Soft Blue */
+  --tag-dom-text: #93c5fd;
+  --tag-dom-border: rgba(59, 130, 246, 0.2);
+
   --gradient-accent: linear-gradient(135deg, var(--color-accent-1), var(--color-accent-2));
   --gradient-glow: linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(139, 92, 246, 0.4));
   --border-color: rgba(255, 255, 255, 0.08);
@@ -24,6 +42,7 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Dynamic Background Variables */
 body {
   background-color: var(--bg-color);
   color: var(--text-primary);
@@ -31,24 +50,74 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  
+  --bg-blob-1: rgba(59, 130, 246, 0.05); /* Blue */
+  --bg-blob-2: rgba(168, 85, 247, 0.05); /* Purple */
+  --bg-blob-3: rgba(59, 130, 246, 0.03); /* Faint Blue */
+  transition: --bg-blob-1 1.5s ease, --bg-blob-2 1.5s ease, --bg-blob-3 1.5s ease;
 }
 
-/* Subtle Animated Background */
-.bg-animation {
+/* Subtle Section Shifts */
+body[data-active-section="capabilities"] {
+  --bg-blob-1: rgba(168, 85, 247, 0.06); 
+  --bg-blob-2: rgba(59, 130, 246, 0.04);
+}
+body[data-active-section="projects"] {
+  --bg-blob-1: rgba(34, 197, 94, 0.04); /* Soft Green influence */
+  --bg-blob-2: rgba(168, 85, 247, 0.06);
+}
+body[data-active-section="skills"] {
+  --bg-blob-1: rgba(234, 179, 8, 0.04); /* Soft Yellow influence */
+  --bg-blob-2: rgba(59, 130, 246, 0.05);
+}
+
+/* Parallax Wrapper */
+.bg-wrapper {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: -10%; left: -10%; 
+  width: 120vw; height: 120vh;
   z-index: -1;
-  background: radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08), transparent 25%),
-              radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.08), transparent 25%);
-  animation: pulse-bg 15s ease-in-out infinite alternate;
+  pointer-events: none;
+  will-change: transform;
 }
 
-@keyframes pulse-bg {
-  0% { transform: scale(1); opacity: 0.8; }
-  100% { transform: scale(1.1); opacity: 1; }
+/* Floating Globs */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.8;
+  animation: float-blob 20s ease-in-out infinite alternate;
+  will-change: transform, background;
+  transition: background 1.5s ease;
+}
+
+.blob-1 {
+  width: 60vw; height: 60vw;
+  top: 0; left: -10%;
+  background: radial-gradient(circle, var(--bg-blob-1) 0%, transparent 60%);
+}
+
+.blob-2 {
+  width: 50vw; height: 50vw;
+  bottom: -10%; right: -10%;
+  background: radial-gradient(circle, var(--bg-blob-2) 0%, transparent 60%);
+  animation-delay: -5s;
+}
+
+.blob-3 {
+  width: 40vw; height: 40vw;
+  top: 40%; left: 40%;
+  background: radial-gradient(circle, var(--bg-blob-3) 0%, transparent 60%);
+  animation-delay: -10s;
+  animation-duration: 25s;
+}
+
+@keyframes float-blob {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(5%, -5%) scale(1.05); }
+  66% { transform: translate(-3%, 4%) scale(0.95); }
+  100% { transform: translate(-2%, 2%) scale(1.02); }
 }
 
 /* Typography Basics */
@@ -79,13 +148,16 @@ a:hover {
   padding: 0 2rem;
 }
 
-section {
-  padding: 6rem 0;
+.section {
+  margin-top: 8rem;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Soft visual divider */
 }
 
-section h2 {
+.section h2 {
   font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 3rem;
+  margin-bottom: 4rem; /* Wide title spacing */
 }
 
 /* Glassmorphism Header */
@@ -171,8 +243,9 @@ section h2 {
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   color: #fff;
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
 }
 
 .btn-primary:hover::before {
@@ -187,8 +260,9 @@ section h2 {
 
 .btn-secondary:hover {
   background: var(--surface-hover);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
+  border-color: rgba(168, 85, 247, 0.3);
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.15);
+  transform: translateY(-3px);
 }
 
 /* Hero Section */
@@ -261,9 +335,9 @@ section h2 {
 
 .card:hover {
   background: var(--surface-hover);
-  border-color: rgba(255,255,255,0.15);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
+  border-color: rgba(59, 130, 246, 0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px -10px rgba(59, 130, 246, 0.2);
 }
 
 .card::after {
@@ -338,15 +412,90 @@ section h2 {
 }
 
 .tech-tag {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid var(--border-color);
-  padding: 0.25rem 0.75rem;
+  padding: 0.3rem 0.8rem;
   border-radius: 9999px;
   font-size: 0.8rem;
+  font-weight: 500;
+  transition: all var(--transition-normal);
+}
+
+.tech-tag {
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all var(--transition-normal);
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Base Tag Styling applied dynamically via HTML classes */
+.tag-prog {
+  background: var(--tag-prog-bg);
+  color: var(--tag-prog-text);
+  border: 1px solid var(--tag-prog-border);
+}
+
+.tag-aiml {
+  background: var(--tag-aiml-bg);
+  color: var(--tag-aiml-text);
+  border: 1px solid var(--tag-aiml-border);
+}
+
+.tag-be {
+  background: var(--tag-be-bg);
+  color: var(--tag-be-text);
+  border: 1px solid var(--tag-be-border);
+}
+
+.tag-dom {
+  background: var(--tag-dom-bg);
+  color: var(--tag-dom-text);
+  border: 1px solid var(--tag-dom-border);
+}
+
+/* Skills 2x2 Grid Layout & Separators */
+.skill-category {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-title {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.category-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border-color), transparent);
+  margin-bottom: 1.5rem;
+}
+
+.capability-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.capability-list li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
   color: var(--text-secondary);
 }
 
-/* Skills */
+.capability-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent-1);
+  font-size: 1.5rem;
+  line-height: 1;
+  top: -2px;
+}
 .skill-card h4 {
   font-size: 1.25rem;
   margin-bottom: 1rem;
@@ -491,8 +640,9 @@ footer {
 /* Animations Tools (JS hook) */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1), transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
 }
 
 .reveal.active {
