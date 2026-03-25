@@ -18,11 +18,13 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Dynamic Parallax & Blob Background -->
+    <!-- Sentinel for Navbar IntersectionObserver -->
+    <div id="nav-sentinel" style="position: absolute; top: 0; left: 0; width: 100%; height: 1px; pointer-events: none; visibility: hidden;"></div>
+
+    <!-- Cinematic Parallax Background -->
     <div class="bg-wrapper" id="bg-parallax">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
     </div>
     
     <!-- Header -->
@@ -82,7 +84,7 @@
 
         <!-- Projects Section -->
         <section id="projects" class="section container reveal">
-            <h2>Architecture <span class="font-serif">&</span> Deployments</h2>
+            <h2>What I've <span class="font-serif">Built</span></h2>
             
             <div class="grid-2">
                 

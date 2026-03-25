@@ -47,77 +47,44 @@ body {
   background-color: var(--bg-color);
   color: var(--text-primary);
   font-family: var(--font-sans);
-  line-height: 1.6;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  
-  --bg-blob-1: rgba(59, 130, 246, 0.05); /* Blue */
-  --bg-blob-2: rgba(168, 85, 247, 0.05); /* Purple */
-  --bg-blob-3: rgba(59, 130, 246, 0.03); /* Faint Blue */
-  transition: --bg-blob-1 1.5s ease, --bg-blob-2 1.5s ease, --bg-blob-3 1.5s ease;
 }
 
-/* Subtle Section Shifts */
-body[data-active-section="capabilities"] {
-  --bg-blob-1: rgba(168, 85, 247, 0.06); 
-  --bg-blob-2: rgba(59, 130, 246, 0.04);
-}
-body[data-active-section="projects"] {
-  --bg-blob-1: rgba(34, 197, 94, 0.04); /* Soft Green influence */
-  --bg-blob-2: rgba(168, 85, 247, 0.06);
-}
-body[data-active-section="skills"] {
-  --bg-blob-1: rgba(234, 179, 8, 0.04); /* Soft Yellow influence */
-  --bg-blob-2: rgba(59, 130, 246, 0.05);
-}
-
-/* Parallax Wrapper */
+/* Cinematic Background (60fps Optimized) */
 .bg-wrapper {
   position: fixed;
-  top: -10%; left: -10%; 
-  width: 120vw; height: 120vh;
+  top: -20%; left: -20%; 
+  width: 140vw; height: 140vh;
   z-index: -1;
   pointer-events: none;
   will-change: transform;
 }
 
-/* Floating Globs */
 .blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.8;
+  opacity: 0.6;
   animation: float-blob 20s ease-in-out infinite alternate;
-  will-change: transform, background;
-  transition: background 1.5s ease;
 }
 
+/* Faux-blur using radial-gradient prevents heavy composite rasterization */
 .blob-1 {
   width: 60vw; height: 60vw;
-  top: 0; left: -10%;
-  background: radial-gradient(circle, var(--bg-blob-1) 0%, transparent 60%);
+  top: 10%; left: 10%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(59, 130, 246, 0.02) 40%, transparent 60%);
 }
 
 .blob-2 {
-  width: 50vw; height: 50vw;
-  bottom: -10%; right: -10%;
-  background: radial-gradient(circle, var(--bg-blob-2) 0%, transparent 60%);
-  animation-delay: -5s;
-}
-
-.blob-3 {
-  width: 40vw; height: 40vw;
-  top: 40%; left: 40%;
-  background: radial-gradient(circle, var(--bg-blob-3) 0%, transparent 60%);
+  width: 60vw; height: 60vw;
+  bottom: 0; right: 0;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, rgba(168, 85, 247, 0.02) 40%, transparent 60%);
   animation-delay: -10s;
-  animation-duration: 25s;
 }
 
 @keyframes float-blob {
-  0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(5%, -5%) scale(1.05); }
-  66% { transform: translate(-3%, 4%) scale(0.95); }
-  100% { transform: translate(-2%, 2%) scale(1.02); }
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(5%, -5%, 0) scale(1.05); }
+  66% { transform: translate3d(-3%, 4%, 0) scale(0.95); }
+  100% { transform: translate3d(-2%, 2%, 0) scale(1.02); }
 }
 
 /* Typography Basics */
@@ -160,21 +127,19 @@ a:hover {
   margin-bottom: 4rem; /* Wide title spacing */
 }
 
-/* Glassmorphism Header */
+/* High-Performance Header */
 .header {
   position: fixed;
   top: 0; left: 0; right: 0;
   padding: 1rem 0;
-  background: rgba(10, 10, 11, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(10, 10, 11, 0.85); /* Replaced heavy backdrop-filter with clean semi-transparency */
   border-bottom: 1px solid var(--border-color);
   z-index: 1000;
-  transition: all var(--transition-normal);
+  transition: background var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 .header.scrolled {
-  background: rgba(10, 10, 11, 0.9);
+  background: rgba(10, 10, 11, 0.98);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -201,10 +166,26 @@ a:hover {
   color: var(--text-secondary);
   font-size: 0.95rem;
   font-weight: 500;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-accent-1);
+  transition: width var(--transition-normal);
 }
 
 .nav-links a:hover {
   color: var(--text-primary);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 /* Buttons */
@@ -243,7 +224,7 @@ a:hover {
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
+  transform: translate3d(0, -3px, 0);
   color: #fff;
   box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
 }
@@ -262,7 +243,7 @@ a:hover {
   background: var(--surface-hover);
   border-color: rgba(168, 85, 247, 0.3);
   box-shadow: 0 4px 15px rgba(168, 85, 247, 0.15);
-  transform: translateY(-3px);
+  transform: translate3d(0, -3px, 0);
 }
 
 /* Hero Section */
@@ -322,8 +303,10 @@ a:hover {
 
 /* Cards */
 .card {
-  background: var(--surface-color);
-  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 16px;
   padding: 2.5rem;
   transition: all var(--transition-normal);
@@ -336,7 +319,7 @@ a:hover {
 .card:hover {
   background: var(--surface-hover);
   border-color: rgba(59, 130, 246, 0.2);
-  transform: translateY(-6px);
+  transform: translate3d(0, -6px, 0); /* GPU acceleration */
   box-shadow: 0 12px 30px -10px rgba(59, 130, 246, 0.2);
 }
 
@@ -361,13 +344,15 @@ a:hover {
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   padding: 3rem;
-  background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.1);
 }
 
 .project-card.featured:hover {
-  border-color: rgba(59, 130, 246, 0.6);
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.8);
+  box-shadow: 0 0 50px rgba(59, 130, 246, 0.25);
+  transform: translate3d(0, -6px, 0);
 }
 
 .project-card h3 {
@@ -640,14 +625,13 @@ footer {
 /* Animations Tools (JS hook) */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translate3d(0, 40px, 0);
   transition: opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1), transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
-  will-change: opacity, transform;
 }
 
 .reveal.active {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
 }
 
 /* Responsive */
