@@ -14,6 +14,9 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     
+    <!-- Devicon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -31,29 +34,66 @@
     <header class="header" id="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">Osama Youssef</a>
+            
             <nav class="nav-links">
-                <a href="#projects">Projects</a>
+                <a href="#hero">Home</a>
+                <a href="#about">About</a>
+                <a href="#capabilities">Capabilities</a>
                 <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
             </nav>
+            
+            <div class="nav-actions" style="display: flex; align-items: center; gap: 1rem;">
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme" style="background: none; border: none; font-size: 1.25rem; color: var(--text-primary); cursor: pointer;">
+                    <i class="bi bi-sun"></i>
+                </button>
+                <a href="https://www.linkedin.com/in/osama-youssef-a54b38290" target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem; display: none; /* simple hidden on mobile initially */">LinkedIn</a>
+                
+                <!-- Mobile Menu Toggle -->
+                <div class="mobile-menu-btn" style="display: none; font-size: 1.75rem; cursor: pointer; color: var(--text-primary);">
+                    <i class="bi bi-list"></i>
+                </div>
+            </div>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
         <section id="hero" class="hero container reveal">
-            <div>
-                <h1>AI Engineer building <span class="font-serif">production-ready</span> ML & Generative AI systems</h1>
-                <p class="lead" style="margin-bottom: 2rem;">
-                    An early-stage AI engineer capable of building production-level systems. I focus on developing scalable architecture, inference pipelines, and real-world machine learning solutions.
-                </p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">
-                        View Projects <i class="bi bi-arrow-right"></i>
-                    </a>
-                    <a href="https://github.com/Khlybtssh" target="_blank" class="btn btn-secondary">
-                        <i class="bi bi-github"></i> View GitHub
-                    </a>
+            <div class="hero-grid">
+                <!-- LEFT: Profile Image -->
+                <div class="hero-image-wrapper">
+                    <div class="hero-glow-shape"></div>
+                    <img src="assets/images/profile.jpg" alt="Osama Youssef" class="profile-image">
+                </div>
+                
+                <!-- RIGHT: Content -->
+                <div class="hero-content">
+                    <p class="hero-intro">Hi, I'm</p>
+                    <h1 class="hero-name">Osama Youssef</h1>
+                    <h2 class="hero-subtitle">AI Engineer</h2>
+                    <p class="hero-desc">
+                        I build complete, end-to-end AI systems ready for production — specializing in scalable inference pipelines and machine learning architecture.
+                    </p>
+                    
+                    <!-- Social Icons -->
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/osama-youssef-a54b38290" target="_blank" class="social-btn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/Khlybtssh" target="_blank" class="social-btn"><i class="bi bi-github"></i></a>
+                        <a href="#" class="social-btn"><i class="bi bi-telegram"></i></a>
+                        <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                    
+                    <!-- CTA Actions -->
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">
+                            Get In Touch <i class="bi bi-arrow-right"></i>
+                        </a>
+                        <a href="#projects" class="btn btn-secondary">
+                            View Projects
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -65,22 +105,36 @@
             </div>
         </section>
 
-        <!-- What I Can Build Section -->
-        <section id="capabilities" class="section container reveal">
-            <h2>System <span class="font-serif">Capabilities</span></h2>
-            <div class="card" style="padding: 3rem;">
-                <p class="lead" style="color: var(--text-primary); font-size: 1.25rem; font-weight: 500; margin-bottom: 2rem;">
-                    I design and build end-to-end AI systems that move from data to production.
-                </p>
-                <ul class="capability-list">
-                    <li>Machine learning systems for prediction, classification, and recommendation</li>
-                    <li>Deep learning models for computer vision, NLP, and generative AI</li>
-                    <li>Scalable inference pipelines and model deployment (APIs, real-time systems)</li>
-                    <li>Data processing and feature engineering pipelines</li>
-                    <li>AI-powered applications with clean, usable interfaces</li>
-                </ul>
+        <!-- About Section -->
+        <section id="about" class="section container reveal">
+            <div class="about-grid">
+                <!-- LEFT: Image -->
+                <div class="about-image-wrapper">
+                    <div class="about-glow-shape"></div>
+                    <img src="assets/images/about.jpg" alt="About Osama" class="about-image">
+                </div>
+                
+                <!-- RIGHT: Content -->
+                <div class="about-content">
+                    <h2 style="margin-bottom: 2rem;">About <span class="font-serif">Me</span></h2>
+                    <p class="about-intro">
+                        I am an AI Engineer passionate about designing scalable machine learning pipelines and architecting robust systems that bridge the gap between cutting-edge research and real-world impact.
+                    </p>
+                    <p class="about-desc">
+                        My journey in artificial intelligence began with a fascination for generative models and deep learning frameworks. I focus on developing clean, well-tested solutions ranging from predictive algorithms to computer vision tools powered by PyTorch and OpenCV.
+                    </p>
+                    <p class="about-desc" style="margin-bottom: 2.5rem;">
+                        Beyond the model architecture, I emphasize rigorous engineering practices — ensuring everything from data preprocessing to inference execution is optimized for speed, reliability, and ease of deployment.
+                    </p>
+                    
+                    <a href="Osama_Youssef_AI_Resume.pdf" class="btn btn-primary" target="_blank" download>
+                        <i class="bi bi-file-earmark-person"></i> View My CV
+                    </a>
+                </div>
             </div>
         </section>
+
+
 
         <!-- Projects Section -->
         <section id="projects" class="section container reveal">
@@ -165,59 +219,119 @@
             </div>
         </section>
 
+        <!-- What I Can Build Section -->
+        <section id="capabilities" class="section container reveal">
+            <h2>System <span class="font-serif">Capabilities</span></h2>
+            
+            <div class="capabilities-grid">
+                <!-- Card 1 -->
+                <div class="card capability-card">
+                    <div class="capability-icon"><i class="bi bi-diagram-3"></i></div>
+                    <h3>Custom Machine Learning</h3>
+                    <p>Predictive models and recommendation engines tailored for structured data logic.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="card capability-card">
+                    <div class="capability-icon"><i class="bi bi-cpu"></i></div>
+                    <h3>Deep Learning</h3>
+                    <p>Computer vision architectures, NLP systems, and generative neural networks.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="card capability-card">
+                    <div class="capability-icon"><i class="bi bi-server"></i></div>
+                    <h3>Model Deployment</h3>
+                    <p>Scalable inference services, APIs, and real-time production integrations.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="card capability-card">
+                    <div class="capability-icon"><i class="bi bi-database-gear"></i></div>
+                    <h3>Data Pipelines</h3>
+                    <p>Automated workflows processing raw datasets into optimized operational features.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="card capability-card">
+                    <div class="capability-icon"><i class="bi bi-window-sidebar"></i></div>
+                    <h3>Full-Stack AI Integration</h3>
+                    <p>Delivering robust machine learning engines tied up in clean, responsive web layers.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Skills Section -->
         <section id="skills" class="section container reveal">
             <h2>Technical <span class="font-serif">Stack</span></h2>
-            <div class="grid-2">
-                <!-- Programming -->
-                <div class="card skill-category">
-                    <h4 class="category-title">Programming</h4>
-                    <hr class="category-divider">
-                    <div class="tech-stack">
-                        <span class="tech-tag tag-prog">Python</span>
-                        <span class="tech-tag tag-prog">Java</span>
-                        <span class="tech-tag tag-prog">C++</span>
-                    </div>
+            <div class="skill-tabs">
+                <button class="tab-btn active" data-target="all">All</button>
+                <button class="tab-btn" data-target="ai-ml">AI/ML</button>
+                <button class="tab-btn" data-target="backend">Backend & APIs</button>
+                <button class="tab-btn" data-target="tools">Tools</button>
+            </div>
+
+            <div class="skills-grid" id="skills-grid">
+                <!-- AI/ML -->
+                <div class="card skill-card" data-category="ai-ml">
+                    <i class="devicon-pytorch-original colored"></i>
+                    <span>PyTorch</span>
                 </div>
-                <!-- Machine Learning & Data -->
-                <div class="card skill-category">
-                    <h4 class="category-title">Machine Learning & Data</h4>
-                    <hr class="category-divider">
-                    <div class="tech-stack">
-                        <span class="tech-tag tag-dom">Scikit-learn</span>
-                        <span class="tech-tag tag-dom">NumPy</span>
-                        <span class="tech-tag tag-dom">Pandas</span>
-                        <span class="tech-tag tag-dom">Data Preprocessing</span>
-                        <span class="tech-tag tag-dom">Model Optimization</span>
-                        <span class="tech-tag tag-dom">Data Visualization</span>
-                    </div>
+                <div class="card skill-card" data-category="ai-ml">
+                    <i class="devicon-tensorflow-original colored"></i>
+                    <span>TensorFlow</span>
                 </div>
-                <!-- Deep Learning & AI -->
-                <div class="card skill-category">
-                    <h4 class="category-title">Deep Learning & AI</h4>
-                    <hr class="category-divider">
-                    <div class="tech-stack">
-                        <span class="tech-tag tag-aiml">PyTorch</span>
-                        <span class="tech-tag tag-aiml">TensorFlow</span>
-                        <span class="tech-tag tag-aiml">Transformers</span>
-                        <span class="tech-tag tag-aiml">Neural Networks</span>
-                        <span class="tech-tag tag-aiml">NLP</span>
-                        <span class="tech-tag tag-aiml">Prompt Engineering</span>
-                    </div>
+                <div class="card skill-card" data-category="ai-ml">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn" class="skill-icon-img">
+                    <span>Scikit-learn</span>
                 </div>
-                <!-- Tools & Systems -->
-                <div class="card skill-category">
-                    <h4 class="category-title">Tools & Systems</h4>
-                    <hr class="category-divider">
-                    <div class="tech-stack">
-                        <span class="tech-tag tag-be">Git</span>
-                        <span class="tech-tag tag-be">Jupyter</span>
-                        <span class="tech-tag tag-be">Colab</span>
-                        <span class="tech-tag tag-be">FastAPI</span>
-                        <span class="tech-tag tag-be">Gradio</span>
-                        <span class="tech-tag tag-be">OpenCV</span>
-                        <span class="tech-tag tag-be">PaddleOCR</span>
-                    </div>
+                <div class="card skill-card" data-category="ai-ml">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="Pandas" class="skill-icon-img">
+                    <span>Pandas</span>
+                </div>
+                <div class="card skill-card" data-category="ai-ml">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" alt="NumPy" class="skill-icon-img">
+                    <span>NumPy</span>
+                </div>
+                <div class="card skill-card" data-category="ai-ml">
+                    <i class="bi bi-robot" style="color: var(--tag-aiml-text);"></i>
+                    <span>Transformers</span>
+                </div>
+                
+                <!-- Backend & APIs -->
+                <div class="card skill-card" data-category="backend">
+                    <i class="devicon-python-plain colored"></i>
+                    <span>Python</span>
+                </div>
+                <div class="card skill-card" data-category="backend">
+                    <i class="devicon-java-plain colored"></i>
+                    <span>Java</span>
+                </div>
+                <div class="card skill-card" data-category="backend">
+                    <i class="devicon-cplusplus-plain colored"></i>
+                    <span>C++</span>
+                </div>
+                <div class="card skill-card" data-category="backend">
+                    <i class="devicon-fastapi-plain colored" style="color: #009688;"></i>
+                    <span>FastAPI</span>
+                </div>
+                
+                <!-- Tools -->
+                <div class="card skill-card" data-category="tools">
+                    <i class="devicon-git-plain colored"></i>
+                    <span>Git</span>
+                </div>
+                <div class="card skill-card" data-category="tools">
+                    <i class="devicon-jupyter-plain colored"></i>
+                    <span>Jupyter</span>
+                </div>
+                <div class="card skill-card" data-category="tools">
+                    <i class="devicon-vscode-plain colored"></i>
+                    <span>VS Code</span>
+                </div>
+                <div class="card skill-card" data-category="tools">
+                    <i class="devicon-opencv-plain colored"></i>
+                    <span>OpenCV</span>
+                </div>
+                <div class="card skill-card" data-category="tools">
+                    <i class="bi bi-tools" style="color: var(--text-secondary);"></i>
+                    <span>PaddleOCR</span>
                 </div>
             </div>
         </section>
@@ -291,10 +405,54 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container footer-content">
-            <p>© 2026 Osama Youssef. All rights reserved.</p>
-            <p>Cairo, Egypt</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- About -->
+                <div class="footer-col">
+                    <h3 class="footer-heading">Osama Youssef</h3>
+                    <p class="footer-text">An AI Engineer specializing in end-to-end machine learning architecture and scalable production systems.</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#capabilities">Capabilities</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div class="footer-col">
+                    <h3 class="footer-heading">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Machine Learning</a></li>
+                        <li><a href="#">Deep Learning</a></li>
+                        <li><a href="#">Data Pipelines</a></li>
+                        <li><a href="#">Model Deployment</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Connect -->
+                <div class="footer-col">
+                    <h3 class="footer-heading">Connect</h3>
+                    <div class="footer-socials">
+                        <a href="mailto:osamayousef372@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                        <a href="https://github.com/Khlybtssh" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                        <a href="https://www.linkedin.com/in/osama-youssef-a54b38290" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Osama Youssef. All rights reserved.</p>
+                <p>Cairo, Egypt</p>
+            </div>
         </div>
     </footer>
 
