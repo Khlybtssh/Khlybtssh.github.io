@@ -1,5 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Intersection Observer for Scroll Reveal
+
+    // 1. Smooth Scrolling for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // 2. Intersection Observer for Fade-Up Scroll Reveal
     const revealElements = document.querySelectorAll('.reveal');
     const observerOptions = {
         threshold: 0.1,
@@ -17,23 +32,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // trigger hero reveal immediately
+    // Trigger hero reveal immediately on load
     setTimeout(() => {
         const hero = document.getElementById('hero');
         if (hero) hero.classList.add('active');
     }, 100);
 
-    // 2. Sticky Navbar Blur Effect
+    // 3. Glassmorphism Sticky Navbar Transition On Scroll
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(10, 10, 11, 0.95)';
-            navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
-            navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.05)';
+            navbar.classList.add('scrolled');
         } else {
-            navbar.style.background = 'rgba(10, 10, 11, 0.8)';
-            navbar.style.boxShadow = 'none';
-            navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+            navbar.classList.remove('scrolled');
         }
     });
+
 });

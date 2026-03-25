@@ -18,17 +18,17 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Animated Subtle Background -->
+    <div class="bg-animation"></div>
     
     <!-- Navigation -->
     <header class="header" id="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">Osama Youssef</a>
             <nav class="nav-links">
-                <a href="#about">About</a>
                 <a href="#projects">Projects</a>
-                <a href="#capabilities">Capabilities</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Hire Me</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
@@ -36,231 +36,228 @@
     <main>
         <!-- Hero Section -->
         <section id="hero" class="hero container reveal">
-            <div class="status-badge">
-                <div class="status-dot"></div> Cairo, Egypt · Available
-            </div>
-            <h1>AI Engineer building <span class="italic-serif">production-ready</span> ML & Generative AI systems</h1>
-            <p class="lead">
-                I design and implement real-world machine learning systems — from deep learning frameworks to recommendation engines and fraud detection pipelines.
-            </p>
-            <p>Focused on Generative AI, LLMs, and scalable AI systems</p>
-            <div class="hero-actions">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
-                <div class="icon-links">
-                    <a href="https://github.com/Khlybtssh" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
-                    <a href="https://www.linkedin.com/in/osama-youssef-a54b38290" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                    <a href="mailto:osamayousef372@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section container reveal">
-            <h2>Building AI that <span class="italic-serif">actually works</span></h2>
-            <div class="grid-2">
-                <div>
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <h4>3+</h4>
-                            <p>ML Projects</p>
-                        </div>
-                        <div class="stat-item">
-                            <h4>2+</h4>
-                            <p>Specializations</p>
-                        </div>
-                        <div class="stat-item">
-                            <h4>2027</h4>
-                            <p>Expected Grad.</p>
-                        </div>
-                        <div class="stat-item">
-                            <h4>Cairo</h4>
-                            <p>Based In</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <p>I am an Artificial Intelligence student focused on building practical and production-ready AI systems. I have hands-on experience developing machine learning pipelines, deep learning frameworks, and real-world applications with a focus on efficiency and scalability. My work spans fraud detection systems, recommendation engines, and custom neural network architectures — built to solve real problems, not just demonstrate concepts.</p>
-                </div>
-            </div>
-
-            <div style="margin-top: 4rem;">
-                <h3>Technical expertise</h3>
-                <div class="grid-4" style="margin-top: 2rem;">
-                    <div class="card">
-                        <div class="card-icon"><i class="bi bi-code-slash"></i></div>
-                        <h4>Programming</h4>
-                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Python, C++, SQL, JavaScript</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon"><i class="bi bi-cpu"></i></div>
-                        <h4>AI & Deep Learning</h4>
-                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">PyTorch, TensorFlow, Neural Networks</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon"><i class="bi bi-graph-up"></i></div>
-                        <h4>Machine Learning</h4>
-                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Scikit-learn, Pandas, XGBoost</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon"><i class="bi bi-diagram-3"></i></div>
-                        <h4>Libraries & Tools</h4>
-                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Git, Docker, FastAPI</p>
-                    </div>
+            <div>
+                <h1>AI Engineer building <span class="font-serif">production-ready</span> ML & Generative AI systems</h1>
+                <p class="lead">
+                    I design and implement real-world machine learning systems — including fraud detection systems, recommendation engines, and deep learning frameworks.
+                </p>
+                <p class="note">Focused on Generative AI, LLMs, and scalable AI systems</p>
+                
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        View Projects <i class="bi bi-arrow-right"></i>
+                    </a>
+                    <a href="https://github.com/Khlybtssh" target="_blank" class="btn btn-secondary">
+                        <i class="bi bi-github"></i> GitHub
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
         <section id="projects" class="section container reveal">
-            <h2>What I've <span class="italic-serif">built</span></h2>
-            <div class="grid-3" style="margin-top: 3rem;">
-                
-                <div class="card project-card">
-                    <h3>Fraud Detection System</h3>
-                    <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">Designed a hybrid fraud detection system for real-time risk evaluation and decision-making.</p>
-                    <ul>
-                        <li>Combined Isolation Forest, PyTorch classifier, and rule-based logic into a unified decision engine</li>
-                        <li>Built modular ML pipeline for preprocessing, training, and inference with SMOTE for class imbalance</li>
-                        <li>Implemented 3-tier decision engine: APPROVE / REVIEW / DECLINE with configurable thresholds</li>
-                    </ul>
-                    <a href="https://github.com/Khlybtssh" target="_blank" class="btn btn-secondary" style="margin-top: auto; align-self: flex-start;">GitHub</a>
-                </div>
-
-                <div class="card project-card">
-                    <h3>Neural Network from Scratch</h3>
-                    <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">Built a modular deep learning engine from scratch using NumPy.</p>
-                    <ul>
-                        <li>Implemented forward and backpropagation manually — no ML libraries</li>
-                        <li>Designed reusable layer system (Dense, Dropout) and Adam optimizer</li>
-                        <li>Simulates internal deep learning framework behavior end-to-end</li>
-                    </ul>
-                    <a href="https://github.com/Khlybtssh" target="_blank" class="btn btn-secondary" style="margin-top: auto; align-self: flex-start;">GitHub</a>
-                </div>
-
-                <div class="card project-card">
-                    <h3>Movie Recommendation System</h3>
-                    <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">Developed a recommendation system achieving ~0.97 RMSE.</p>
-                    <ul>
-                        <li>Matrix factorization with learned user/item embeddings on MovieLens dataset</li>
-                        <li>Optimized using Adam optimizer with L2 regularization to prevent overfitting</li>
-                    </ul>
-                    <a href="https://github.com/Khlybtssh" target="_blank" class="btn btn-secondary" style="margin-top: auto; align-self: flex-start;">GitHub</a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Capabilities Section -->
-        <section id="capabilities" class="section container reveal capabilities">
-            <h2>What I can <span class="italic-serif">build</span></h2>
-            <div class="grid-2" style="margin-top: 3rem;">
-                <div class="card">
-                    <h3>Fraud Detection Systems</h3>
-                    <p style="margin-top: 0.5rem;">Hybrid ML pipelines combining anomaly detection, classifiers, and rule-based logic for real-time risk evaluation.</p>
-                </div>
-                <div class="card">
-                    <h3>Recommendation Engines</h3>
-                    <p style="margin-top: 0.5rem;">Collaborative filtering and matrix factorization systems with embedding-based personalization at scale.</p>
-                </div>
-                <div class="card">
-                    <h3>LLM-Powered Applications</h3>
-                    <p style="margin-top: 0.5rem;">Generative AI applications leveraging large language models with prompt engineering and retrieval-augmented generation.</p>
-                </div>
-                <div class="card">
-                    <h3>AI APIs & Backend Systems</h3>
-                    <p style="margin-top: 0.5rem;">Production-ready AI APIs and backend services built with FastAPI, designed for scalability and real-world deployment.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience & Education Section -->
-        <section id="experience" class="section container reveal">
+            <h2>Projects <span class="font-serif">&</span> Impact</h2>
+            
             <div class="grid-2">
-                <div>
-                    <h2>Work <span class="italic-serif">history</span></h2>
-                    <div style="margin-top: 2rem;">
-                        <div class="history-item">
-                            <div class="history-year">Unknown</div>
-                            <div class="history-content">
-                                <h3>Operations & Supply Chain Coordinator</h3>
-                                <h4>Family Business</h4>
-                                <ul style="list-style-type: none; padding-left: 0;">
-                                    <li style="position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.95rem;">
-                                        <span style="position: absolute; left: 0; color: var(--accent-blue);">→</span> Managed full production lifecycle from sourcing to final delivery
-                                    </li>
-                                    <li style="position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.95rem;">
-                                        <span style="position: absolute; left: 0; color: var(--accent-blue);">→</span> Coordinated suppliers and manufacturing to ensure quality and timelines
-                                    </li>
-                                    <li style="position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.95rem;">
-                                        <span style="position: absolute; left: 0; color: var(--accent-blue);">→</span> Improved operational efficiency and delivery performance across the supply chain
-                                    </li>
-                                </ul>
-                            </div>
+                
+                <!-- Project 1: Featured -->
+                <div class="card project-card featured reveal">
+                    <div>
+                        <h3>Fraud Detection System</h3>
+                        <p class="project-impact">"Designed a hybrid fraud detection system for real-time decision-making"</p>
+                        <ul>
+                            <li>Isolation Forest + PyTorch classifier + rule-based logic</li>
+                            <li>Modular ML pipeline (preprocessing → training → inference)</li>
+                            <li>SMOTE for class imbalance</li>
+                            <li>Decision engine: APPROVE / REVIEW / DECLINE</li>
+                        </ul>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <div class="tech-stack" style="margin-top: auto; margin-bottom: 2rem;">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">Scikit-learn</span>
                         </div>
+                        <a href="https://github.com/Khlybtssh" target="_blank" class="btn btn-secondary" style="align-self: flex-start;">
+                            <i class="bi bi-github"></i> Repository
+                        </a>
                     </div>
                 </div>
-                <div>
-                    <h2>Academic <span class="italic-serif">background</span></h2>
-                    <div style="margin-top: 2rem;">
-                        <div class="history-item">
-                            <div class="history-year">2027</div>
-                            <div class="history-content">
-                                <h3>B.Sc. Artificial Intelligence</h3>
-                                <h4>Egyptian Russian University · Cairo, Egypt</h4>
-                            </div>
-                        </div>
-                        <div class="history-item">
-                            <div class="history-year">Cert</div>
-                            <div class="history-content">
-                                <h3>Machine Learning Specialization</h3>
-                                <h4>Andrew Ng · Coursera</h4>
-                            </div>
-                        </div>
-                        <div class="history-item">
-                            <div class="history-year">Cert</div>
-                            <div class="history-content">
-                                <h3>Deep Learning Specialization</h3>
-                                <h4>Andrew Ng · Coursera</h4>
-                            </div>
-                        </div>
+
+                <!-- Project 2 -->
+                <div class="card project-card reveal">
+                    <h3>Neural Network from Scratch</h3>
+                    <p class="project-impact">"Built a modular deep learning engine from scratch"</p>
+                    <ul>
+                        <li>Manual forward & backpropagation</li>
+                        <li>Custom layers and optimizer system</li>
+                    </ul>
+                    <div class="tech-stack" style="margin-top: auto;">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">NumPy</span>
+                    </div>
+                    <a href="https://github.com/Khlybtssh" target="_blank" class="btn btn-secondary" style="align-self: flex-start; margin-top: 1rem;">
+                        <i class="bi bi-github"></i> Repository
+                    </a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="card project-card reveal">
+                    <h3>Movie Recommendation System</h3>
+                    <p class="project-impact">"Achieved ~0.97 RMSE using collaborative filtering"</p>
+                    <ul>
+                        <li>Matrix factorization + embeddings</li>
+                        <li>Optimized with Adam and regularization</li>
+                    </ul>
+                    <div class="tech-stack" style="margin-top: auto;">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PyTorch</span>
+                    </div>
+                    <a href="https://github.com/Khlybtssh" target="_blank" class="btn btn-secondary" style="align-self: flex-start; margin-top: 1rem;">
+                        <i class="bi bi-github"></i> Repository
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section container reveal">
+            <h2>Technical <span class="font-serif">Expertise</span></h2>
+            <div class="grid-4">
+                <div class="card skill-card">
+                    <h4>Programming</h4>
+                    <div class="skill-list">
+                        <span>Python</span>
+                        <span>Java</span>
+                        <span>C++</span>
                     </div>
                 </div>
+                <div class="card skill-card">
+                    <h4>AI / ML</h4>
+                    <div class="skill-list">
+                        <span>PyTorch</span>
+                        <span>TensorFlow</span>
+                        <span>Transformers</span>
+                        <span>NLP</span>
+                    </div>
+                </div>
+                <div class="card skill-card">
+                    <h4>Tools</h4>
+                    <div class="skill-list">
+                        <span>Git</span>
+                        <span>Jupyter</span>
+                        <span>Colab</span>
+                        <span>FastAPI</span>
+                    </div>
+                </div>
+                <div class="card skill-card">
+                    <h4>Concepts</h4>
+                    <div class="skill-list">
+                        <span>Deep Learning</span>
+                        <span>Recommendation Systems</span>
+                        <span>Computer Vision</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What I Can Build Section -->
+        <section id="capabilities" class="section container reveal">
+            <h2>What I can <span class="font-serif">build</span></h2>
+            <div class="grid-2">
+                <div class="build-item">
+                    <h3>Fraud detection systems</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Hybrid anomaly detection frameworks for robust, real-time security.</p>
+                </div>
+                <div class="build-item">
+                    <h3>Recommendation engines</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Collaborative filtering and state-of-the-art embedding systems.</p>
+                </div>
+                <div class="build-item">
+                    <h3>LLM-powered applications</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Advanced generative workflows, RAG systems, and prompt engineering.</p>
+                </div>
+                <div class="build-item">
+                    <h3>AI APIs & backend systems</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Scalable model serving built for real-world production.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Education -->
+        <section id="background" class="section container reveal">
+            <div class="grid-2">
+                
+                <!-- Experience -->
+                <div>
+                    <h2>Experience</h2>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">May 2022 — Present</div>
+                        <h3>Operations & Supply Chain Coordinator</h3>
+                        <h4>Future Leader</h4>
+                        <ul>
+                            <li>Managed full production lifecycle</li>
+                            <li>Coordinated suppliers and logistics</li>
+                            <li>Ensured efficiency and delivery</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div>
+                    <h2>Education</h2>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Expected 2027</div>
+                        <h3>B.Sc. Artificial Intelligence</h3>
+                        <h4>Egyptian Russian University</h4>
+                    </div>
+                    <div class="timeline-item" style="margin-top: 2rem;">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Certifications</div>
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Machine Learning Specialization</h3>
+                        <h4 style="margin-bottom: 1.5rem;">Andrew Ng (Coursera)</h4>
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Deep Learning Specialization</h3>
+                        <h4>Andrew Ng (Coursera)</h4>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="section container reveal" style="border-top: 1px solid var(--border-color);">
+        <section id="contact" class="section container reveal">
             <div style="text-align: center; max-width: 600px; margin: 0 auto 3rem auto;">
-                <h2>Let's work <span class="italic-serif">together</span></h2>
-                <p>I'm actively seeking internship and junior roles in AI/ML and Generative AI. If you're building something interesting, I'd love to hear about it.</p>
+                <h2>Let's build something <span class="font-serif">impactful</span> together.</h2>
+                <p>Looking for a driven AI/ML Engineer to bring real-world machine learning systems into production? My inbox is always open.</p>
             </div>
-            <div class="contact-cards">
+            
+            <div class="contact-actions">
                 <a href="mailto:osamayousef372@gmail.com" class="card contact-card">
-                    <div class="card-icon"><i class="bi bi-envelope"></i></div>
+                    <i class="bi bi-envelope" style="font-size: 2rem; color: var(--color-accent-1); margin-bottom: 1rem; display: block;"></i>
                     <h3>Email</h3>
                     <p>osamayousef372@gmail.com</p>
                 </a>
                 <a href="https://github.com/Khlybtssh" target="_blank" class="card contact-card">
-                    <div class="card-icon"><i class="bi bi-github"></i></div>
+                    <i class="bi bi-github" style="font-size: 2rem; color: var(--color-accent-1); margin-bottom: 1rem; display: block;"></i>
                     <h3>GitHub</h3>
-                    <p>github.com/Khlybtssh</p>
+                    <p>Khlybtssh</p>
                 </a>
                 <a href="https://www.linkedin.com/in/osama-youssef-a54b38290" target="_blank" class="card contact-card">
-                    <div class="card-icon"><i class="bi bi-linkedin"></i></div>
+                    <i class="bi bi-linkedin" style="font-size: 2rem; color: var(--color-accent-1); margin-bottom: 1rem; display: block;"></i>
                     <h3>LinkedIn</h3>
-                    <p>Connect with me</p>
+                    <p>osama-youssef</p>
                 </a>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-            <p>Currently looking for AI/ML internships and real-world opportunities</p>
-            <div style="text-align: right;">
-                <p style="color: var(--text-primary); margin-bottom: 0;">Osama Youssef</p>
-                <p style="margin-bottom: 0;">© 2026 · Cairo, Egypt</p>
-            </div>
+        <div class="container footer-content">
+            <p>© 2026 Osama Youssef. All rights reserved.</p>
+            <p>Cairo, Egypt</p>
         </div>
     </footer>
 
